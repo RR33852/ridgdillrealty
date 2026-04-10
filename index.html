@@ -4,22 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ridgdill Realty</title>
-  <meta
-    name="description"
-    content="Ridgdill Realty - Building Relationships, Not Just Transactions."
-  />
+  <meta name="description" content="Ridgdill Realty - The Service You Deserve." />
   <style>
     :root {
       --burgundy: #7d1d19;
       --burgundy-dark: #681612;
-      --silver: #a8abad;
       --navy: #1f3b68;
       --text: #1f2937;
       --muted: #6b7280;
-      --light: #f7f7f7;
+      --light: #f8fafc;
       --white: #ffffff;
       --border: #e5e7eb;
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      --shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
       --max-width: 1200px;
     }
 
@@ -55,12 +51,11 @@
     }
 
     .topbar {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.98);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(8px);
+      z-index: 999;
     }
 
     .topbar-inner {
@@ -68,24 +63,19 @@
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      padding: 12px 0;
+      padding: 14px 0;
     }
 
     .brand {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 14px;
-      min-width: 0;
+      flex-shrink: 0;
     }
 
     .brand img {
-      width: 220px;
+      width: 250px;
       max-width: 100%;
       height: auto;
-    }
-
-    .brand-text {
-      display: none;
     }
 
     nav {
@@ -103,23 +93,24 @@
 
     .hero {
       background:
-        linear-gradient(rgba(125, 29, 25, 0.86), rgba(31, 59, 104, 0.82)),
-        url("IMG_2536.PNG") center top / contain no-repeat,
-        linear-gradient(135deg, #5a1411, #1f3b68);
+        linear-gradient(rgba(125, 29, 25, 0.78), rgba(31, 59, 104, 0.72)),
+        url("IMG_2536.PNG") center center / cover no-repeat;
       color: var(--white);
     }
 
     .hero-inner {
-      min-height: 680px;
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      min-height: 620px;
+      display: flex;
       align-items: center;
-      gap: 40px;
-      padding: 70px 0;
+      padding: 90px 0;
     }
 
     .hero-copy {
-      max-width: 620px;
+      max-width: 700px;
+      background: rgba(0, 0, 0, 0.18);
+      padding: 34px;
+      border-radius: 24px;
+      backdrop-filter: blur(4px);
     }
 
     .eyebrow {
@@ -127,7 +118,7 @@
       margin-bottom: 14px;
       padding: 8px 14px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.16);
       color: #f3f4f6;
       font-size: 12px;
       font-weight: 700;
@@ -146,14 +137,14 @@
       margin: 0 0 28px;
       font-size: clamp(17px, 2vw, 21px);
       color: #f3f4f6;
-      max-width: 560px;
+      max-width: 620px;
     }
 
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
     .btn {
@@ -170,19 +161,10 @@
       color: var(--burgundy);
     }
 
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: var(--shadow);
-    }
-
     .btn-outline {
-      border-color: rgba(255, 255, 255, 0.55);
+      border-color: rgba(255, 255, 255, 0.6);
       color: var(--white);
       background: rgba(255, 255, 255, 0.08);
-    }
-
-    .btn-outline:hover {
-      background: rgba(255, 255, 255, 0.16);
     }
 
     .hero-points {
@@ -199,72 +181,6 @@
       font-size: 14px;
       font-weight: 600;
       color: #f9fafb;
-    }
-
-    .hero-card {
-      justify-self: end;
-      width: min(100%, 430px);
-      background: rgba(255, 255, 255, 0.14);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 28px;
-      padding: 18px;
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-card-inner {
-      background: rgba(255, 255, 255, 0.95);
-      color: var(--text);
-      border-radius: 22px;
-      padding: 26px;
-    }
-
-    .hero-card h2 {
-      margin: 0 0 12px;
-      font-size: 32px;
-      line-height: 1.1;
-      color: var(--burgundy);
-    }
-
-    .hero-card .small-label {
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    .hero-card p {
-      margin: 0 0 18px;
-      color: #4b5563;
-      font-size: 16px;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .info-box {
-      background: #f8fafc;
-      border: 1px solid #edf2f7;
-      border-radius: 18px;
-      padding: 14px;
-    }
-
-    .info-box strong {
-      display: block;
-      font-size: 14px;
-      color: var(--burgundy);
-      margin-bottom: 4px;
-    }
-
-    .info-box span {
-      font-size: 14px;
-      color: #4b5563;
     }
 
     section {
@@ -312,7 +228,7 @@
       height: auto;
       object-fit: contain;
       border-radius: 20px;
-      background: linear-gradient(180deg, #f9fafb, #f3f4f6);
+      background: #f9fafb;
     }
 
     .about-copy {
@@ -464,7 +380,6 @@
     }
 
     @media (max-width: 1024px) {
-      .hero-inner,
       .about-grid,
       .contact-grid,
       .cards,
@@ -475,12 +390,8 @@
 
       .hero {
         background:
-          linear-gradient(rgba(125, 29, 25, 0.88), rgba(31, 59, 104, 0.84)),
-          linear-gradient(135deg, #5a1411, #1f3b68);
-      }
-
-      .hero-card {
-        justify-self: start;
+          linear-gradient(rgba(125, 29, 25, 0.82), rgba(31, 59, 104, 0.76)),
+          url("IMG_2536.PNG") center center / cover no-repeat;
       }
     }
 
@@ -490,33 +401,20 @@
         align-items: flex-start;
       }
 
-      nav {
-        gap: 14px;
-      }
-
       .brand img {
-        width: 190px;
+        width: 210px;
       }
 
-      .hero-inner {
-        min-height: auto;
-        padding: 54px 0;
-      }
-
-      .hero h1 {
-        font-size: 40px;
-      }
-
-      .hero-card h2 {
-        font-size: 28px;
-      }
-
-      .info-grid {
-        grid-template-columns: 1fr;
+      .hero-copy {
+        padding: 24px;
       }
 
       .container {
         width: min(calc(100% - 24px), var(--max-width));
+      }
+
+      nav {
+        gap: 14px;
       }
     }
   </style>
@@ -562,36 +460,6 @@
             <span>Personal Service</span>
           </div>
         </div>
-
-        <aside class="hero-card">
-          <div class="hero-card-inner">
-            <div class="small-label">Featured Property</div>
-            <h2>Windy Point Estate</h2>
-            <p>
-              This featured section is display only. The click-through link to the
-              featured property has been removed as requested.
-            </p>
-
-            <div class="info-grid">
-              <div class="info-box">
-                <strong>Property Type</strong>
-                <span>Luxury Waterfront Estate</span>
-              </div>
-              <div class="info-box">
-                <strong>Status</strong>
-                <span>Featured on Site</span>
-              </div>
-              <div class="info-box">
-                <strong>Presented By</strong>
-                <span>Ridgdill Realty</span>
-              </div>
-              <div class="info-box">
-                <strong>Showcased</strong>
-                <span>Information Only</span>
-              </div>
-            </div>
-          </div>
-        </aside>
       </div>
     </section>
 
