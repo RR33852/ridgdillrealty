@@ -87,36 +87,36 @@
 
     .hero-inner {
       min-height: 700px;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
       align-items: center;
-      justify-content: center;
+      gap: 40px;
       padding: 70px 0 90px;
-      text-align: center;
     }
 
     .hero-copy {
-      max-width: 860px;
+      max-width: 760px;
       background: rgba(0, 0, 0, 0.22);
       padding: 36px;
       border-radius: 26px;
       backdrop-filter: blur(4px);
     }
 
-    .hero-logo-wrap {
+    .hero-logo-side {
       display: flex;
-      justify-content: center;
-      margin-bottom: 24px;
+      justify-content: flex-end;
+      align-items: flex-start;
     }
 
     .hero-logo-box {
-      background: rgba(16, 24, 38, 0.78);
+      background: rgba(16, 24, 38, 0.82);
       border-radius: 20px;
-      padding: 18px 24px;
+      padding: 20px 26px;
       box-shadow: var(--shadow);
     }
 
     .hero-logo {
-      width: 330px;
+      width: 340px;
       max-width: 100%;
       height: auto;
     }
@@ -142,7 +142,7 @@
     }
 
     .hero p {
-      margin: 0 auto 28px;
+      margin: 0 0 28px;
       font-size: clamp(17px, 2vw, 21px);
       color: #f3f4f6;
       max-width: 700px;
@@ -150,7 +150,6 @@
 
     .hero-buttons {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
       gap: 14px;
       margin-bottom: 24px;
@@ -182,7 +181,6 @@
 
     .hero-points {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
       gap: 12px;
     }
@@ -394,12 +392,17 @@
     }
 
     @media (max-width: 1024px) {
+      .hero-inner,
       .about-grid,
       .contact-grid,
       .cards,
       .areas-grid,
       .stats {
         grid-template-columns: 1fr;
+      }
+
+      .hero-logo-side {
+        justify-content: center;
       }
     }
 
@@ -444,16 +447,6 @@
     <section class="hero" id="home">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <div class="hero-logo-wrap">
-            <div class="hero-logo-box">
-              <img
-                class="hero-logo"
-                src="Ridgdill-Realty-reverse-color-horiz.jpg"
-                alt="Ridgdill Realty logo"
-              />
-            </div>
-          </div>
-
           <div class="eyebrow">Ridgdill Realty, LLC</div>
           <h1>The Service You Deserve</h1>
           <p>
@@ -472,6 +465,16 @@
             <span>Selling</span>
             <span>Relocation</span>
             <span>Personal Service</span>
+          </div>
+        </div>
+
+        <div class="hero-logo-side">
+          <div class="hero-logo-box">
+            <img
+              class="hero-logo"
+              src="Ridgdill-Realty-reverse-color-horiz.jpg"
+              alt="Ridgdill Realty logo"
+            />
           </div>
         </div>
       </div>
@@ -600,9 +603,9 @@
         <div class="contact-box">
           <p><strong>Ridgdill Realty, LLC</strong></p>
           <p><strong>M. Allen Ridgdill, Broker</strong></p>
-          <p><strong>Phone:</strong> 863-464-0928</p>
+          <p><strong>Cell:</strong> 863-228-0375</p>
           <p><strong>Website:</strong> www.ridgdillrealty.com</p>
-          <p><strong>Service Area:</strong> 863 Area Code In Florida</p>
+          <p><strong>Service Area:</strong> 863 Area Code, Florida</p>
         </div>
       </div>
     </section>
@@ -616,6 +619,20 @@
   </footer>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
