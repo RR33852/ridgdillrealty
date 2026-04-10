@@ -60,7 +60,7 @@
     .topbar-inner {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: center;
       gap: 20px;
       padding: 14px 0;
     }
@@ -86,31 +86,37 @@
     }
 
     .hero-inner {
-      min-height: 680px;
+      min-height: 700px;
       display: flex;
       align-items: center;
+      justify-content: center;
       padding: 70px 0 90px;
+      text-align: center;
     }
 
     .hero-copy {
-      max-width: 760px;
+      max-width: 860px;
       background: rgba(0, 0, 0, 0.22);
-      padding: 34px;
-      border-radius: 24px;
+      padding: 36px;
+      border-radius: 26px;
       backdrop-filter: blur(4px);
     }
 
     .hero-logo-wrap {
-      display: inline-block;
-      background: rgba(12, 18, 28, 0.72);
-      padding: 16px 20px;
-      border-radius: 18px;
-      margin-bottom: 22px;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .hero-logo-box {
+      background: rgba(16, 24, 38, 0.78);
+      border-radius: 20px;
+      padding: 18px 24px;
       box-shadow: var(--shadow);
     }
 
     .hero-logo {
-      width: 320px;
+      width: 330px;
       max-width: 100%;
       height: auto;
     }
@@ -136,14 +142,15 @@
     }
 
     .hero p {
-      margin: 0 0 28px;
+      margin: 0 auto 28px;
       font-size: clamp(17px, 2vw, 21px);
       color: #f3f4f6;
-      max-width: 620px;
+      max-width: 700px;
     }
 
     .hero-buttons {
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
       gap: 14px;
       margin-bottom: 24px;
@@ -163,6 +170,10 @@
       color: var(--burgundy);
     }
 
+    .btn-primary:hover {
+      transform: translateY(-1px);
+    }
+
     .btn-outline {
       border-color: rgba(255, 255, 255, 0.6);
       color: var(--white);
@@ -171,6 +182,7 @@
 
     .hero-points {
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
       gap: 12px;
     }
@@ -389,17 +401,11 @@
       .stats {
         grid-template-columns: 1fr;
       }
-
-      .hero {
-        background:
-          linear-gradient(rgba(125, 29, 25, 0.82), rgba(31, 59, 104, 0.76)),
-          url("IMG_2536.PNG") center center / cover no-repeat;
-      }
     }
 
     @media (max-width: 720px) {
       .topbar-inner {
-        justify-content: center;
+        padding: 12px 0;
       }
 
       .hero-copy {
@@ -439,11 +445,13 @@
       <div class="container hero-inner">
         <div class="hero-copy">
           <div class="hero-logo-wrap">
-            <img
-              class="hero-logo"
-              src="Ridgdill-Realty-reverse-color-horiz.jpg"
-              alt="Ridgdill Realty logo"
-            />
+            <div class="hero-logo-box">
+              <img
+                class="hero-logo"
+                src="Ridgdill-Realty-reverse-color-horiz.jpg"
+                alt="Ridgdill Realty logo"
+              />
+            </div>
           </div>
 
           <div class="eyebrow">Ridgdill Realty, LLC</div>
@@ -594,7 +602,7 @@
           <p><strong>M. Allen Ridgdill, Broker</strong></p>
           <p><strong>Phone:</strong> 863-464-0928</p>
           <p><strong>Website:</strong> www.ridgdillrealty.com</p>
-          <p><strong>Service Area:</strong> Central Florida</p>
+          <p><strong>Service Area:</strong> 863 Area Code In Florida</p>
         </div>
       </div>
     </section>
@@ -608,3 +616,6 @@
   </footer>
 </body>
 </html>
+
+
+
