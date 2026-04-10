@@ -1,142 +1,160 @@
+export default function RidgdillRealtyHomepage() {
+  return (
+    <div className="min-h-screen bg-white text-slate-900">
+      <header className="border-b border-slate-200 bg-white/95 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <div>
+            <div className="text-2xl font-bold tracking-wide">Ridgdill Realty</div>
+            <div className="text-sm text-slate-600">Building Relationships, Not Just Transactions</div>
+          </div>
+          <nav className="hidden gap-6 text-sm font-medium md:flex">
+            <a href="#home" className="hover:text-slate-600">Home</a>
+            <a href="#about" className="hover:text-slate-600">About</a>
+            <a href="#services" className="hover:text-slate-600">Services</a>
+            <a href="#communities" className="hover:text-slate-600">Communities</a>
+            <a href="#contact" className="hover:text-slate-600">Contact</a>
+          </nav>
+        </div>
+      </header>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ridgdill Realty LLC | Building Relationships Not Just Transactions</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-    header {
-      background-color: #5a1a1a;
-      color: #ffffff;
-      padding: 20px;
-      text-align: center;
-    }
-    header img {
-      max-height: 80px;
-    }
-    nav {
-      background-color: #7c2e2e;
-      display: flex;
-      justify-content: center;
-      padding: 10px 0;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-    .hero {
-      background-color: rgba(255, 255, 255, 0.85);
-      color: #5a1a1a;
-      text-align: center;
-      padding: 100px 20px;
-    }
-    .hero h1 {
-      font-size: 48px;
-      margin: 0;
-    }
-    .hero p {
-      font-size: 24px;
-    }
-    .section {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .agent-photo {
-      max-width: 300px;
-      border-radius: 10px;
-      margin: 20px auto;
-      display: block;
-    }
-    footer {
-      background-color: #5a1a1a;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-    .tour-button {
-      display: inline-block;
-      padding: 10px 15px;
-      background-color: #7c2e2e;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    .tour-button:hover {
-      background-color: #5a1a1a;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <img src="Ridgdill Realty reverse color horiz.jpg" alt="Ridgdill Realty Logo">
-    <h2>RIDGDILL REALTY, LLC</h2>
-    <p>"BUILDING RELATIONSHIPS NOT JUST TRANSACTIONS"</p>
-  </header>
+      <section id="home" className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-700" />
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-20 md:grid-cols-2 md:py-28">
+          <div className="text-white">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-slate-200">
+              Ridgdill Realty, LLC
+            </p>
+            <h1 className="max-w-xl text-4xl font-bold leading-tight md:text-6xl">
+              Trusted Florida Real Estate Guidance With Personal Service
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg text-slate-200">
+              Whether you are buying, selling, relocating, or investing, Ridgdill Realty offers local knowledge,
+              thoughtful strategy, and personal attention every step of the way.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href="#contact"
+                className="rounded-2xl bg-white px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg transition hover:scale-[1.02]"
+              >
+                Contact Ridgdill Realty
+              </a>
+              <a
+                href="#services"
+                className="rounded-2xl border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                View Services
+              </a>
+            </div>
+          </div>
 
-  <nav>
-    <a href="#">Home</a>
-    <a href="#team">Our Team</a>
-    <a href="#listings">Listings</a>
-    <a href="#virtual-tour">Virtual Tour</a>
-    <a href="#contact">Contact</a>
-  </nav>
+          <div className="rounded-3xl bg-white/10 p-6 shadow-2xl ring-1 ring-white/20 backdrop-blur">
+            <div className="rounded-2xl bg-white p-6 text-slate-900 shadow-xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Featured Property</p>
+              <h2 className="mt-3 text-3xl font-bold">Windy Point Estate</h2>
+              <p className="mt-4 text-base leading-7 text-slate-600">
+                A signature waterfront offering presented as a featured listing on the Ridgdill Realty website.
+                This section is display-only and does not include a click-through property link.
+              </p>
+              <div className="mt-6 grid grid-cols-2 gap-4 text-sm text-slate-700">
+                <div className="rounded-2xl bg-slate-50 p-4">
+                  <div className="font-semibold">Property Type</div>
+                  <div className="mt-1 text-slate-600">Luxury Waterfront Estate</div>
+                </div>
+                <div className="rounded-2xl bg-slate-50 p-4">
+                  <div className="font-semibold">Status</div>
+                  <div className="mt-1 text-slate-600">Featured on Site</div>
+                </div>
+              </div>
+              <p className="mt-6 text-sm text-slate-500">
+                Property details may be updated directly by Ridgdill Realty without directing visitors off-page.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <div class="hero">
-    <h1>Welcome to Ridgdill Realty</h1>
-    <p>Our dedicated team is here to help you open the door to your future — with experience, integrity, and faith-based service.</p>
-  </div>
+      <section id="about" className="mx-auto max-w-7xl px-6 py-20">
+        <div className="grid gap-10 md:grid-cols-2">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">About</p>
+            <h2 className="mt-3 text-3xl font-bold md:text-4xl">Real Estate Service Rooted in Integrity</h2>
+          </div>
+          <div className="text-base leading-8 text-slate-600">
+            Ridgdill Realty is committed to providing professional service with a personal touch. From first-time
+            buyers to sellers of unique and luxury properties, our goal is to make every transaction clear,
+            well-managed, and relationship-driven.
+          </div>
+        </div>
+      </section>
 
-  <div class="section" id="team">
-    <h2>Meet Our Team</h2>
-    
-  
-      
-    <img src="IMG_2536.PNG" alt="Allen and Sherida Ridgdill" class="agent-photo">
-    <p><strong>Allen and Sherida Ridgdill</strong><br>
-      Allen holds an active broker's license, a Pollutant Storage Contractor license, and an inactive General Contractor license. He holds degrees from Palm Beach Atlantic and Erskine Theological Seminary (M.Div). Sherida, a dual-career agent, holds a BBA and MBA from Florida Atlantic University. Together, the Ridgdill Duo brings unmatched experience and integrity. Reach them at <strong>863-228-0375</strong>.</p>
-  </div>
+      <section id="services" className="bg-slate-50 py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Services</p>
+            <h2 className="mt-3 text-3xl font-bold md:text-4xl">How We Help</h2>
+          </div>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                title: 'Buyers',
+                text: 'Guidance through home search, market analysis, negotiations, inspections, and closing.',
+              },
+              {
+                title: 'Sellers',
+                text: 'Strategic pricing, marketing support, listing preparation, and transaction oversight.',
+              },
+              {
+                title: 'Investors & Relocation',
+                text: 'Local insight for second homes, investment opportunities, and area transitions.',
+              },
+            ].map((item) => (
+              <div key={item.title} className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+                <h3 className="text-xl font-semibold">{item.title}</h3>
+                <p className="mt-3 leading-7 text-slate-600">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-  <div class="section" id="listings">
-    <h2>Featured Listings</h2>
-    <p>Explore our current inventory of homes, land, and commercial opportunities in the 863 area.</p>
-    <p>
-      <a href="https://www.mystatemls.com/agency/fl/lake-placid/ridgdill-realty-llc/23347/" target="_blank" style="font-weight: bold; color: #5a1a1a; text-decoration: underline;">View All Listings on MyStateMLS</a>
-    </p>
-  </div>
+      <section id="communities" className="mx-auto max-w-7xl px-6 py-20">
+        <div className="max-w-2xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Communities</p>
+          <h2 className="mt-3 text-3xl font-bold md:text-4xl">Serving Central Florida Communities</h2>
+          <p className="mt-4 text-base leading-8 text-slate-600">
+            Ridgdill Realty serves buyers and sellers with attention to the unique character of each local market.
+          </p>
+        </div>
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {['Lake Placid', 'Sebring', 'Avon Park', 'Surrounding Areas'].map((area) => (
+            <div key={area} className="rounded-3xl border border-slate-200 bg-white p-6 text-center text-lg font-semibold shadow-sm">
+              {area}
+            </div>
+          ))}
+        </div>
+      </section>
 
-  <div class="section" id="virtual-tour">
-    <h2>Virtual Tour</h2>
-    <p>
-      <a href="https://vprop.ai/share/58bee84d-207a-4b65-bb43-c88093c855f3" target="_blank" class="tour-button">View Virtual Tour</a>
-    </p>
-  </div>
+      <section id="contact" className="bg-slate-900 py-20 text-white">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 md:grid-cols-2">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-300">Contact</p>
+            <h2 className="mt-3 text-3xl font-bold md:text-4xl">Let’s Talk About Your Next Move</h2>
+            <p className="mt-4 max-w-xl text-base leading-8 text-slate-300">
+              Reach out to Ridgdill Realty for questions about buying, selling, featured listings, or local market
+              guidance.
+            </p>
+          </div>
+          <div className="rounded-3xl bg-white/10 p-8 ring-1 ring-white/15 backdrop-blur">
+            <div className="space-y-4 text-base text-slate-200">
+              <p><span className="font-semibold text-white">Brokerage:</span> Ridgdill Realty, LLC</p>
+              <p><span className="font-semibold text-white">Phone:</span> (863) 000-0000</p>
+              <p><span className="font-semibold text-white">Email:</span> info@ridgdillrealty.com</p>
+              <p><span className="font-semibold text-white">Website:</span> www.ridgdillrealty.com</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
 
-  <div class="section" id="contact">
-    <h2>Contact Us</h2>
-    <p>
-      General Office: <strong>863-464-0928</strong><br>
-      Email: <strong>YourTeam863@gmail.com</strong><br><br>
-      
-      <strong>Allen and Sherida Ridgdill:</strong> 863-228-0375
-    </p>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 Ridgdill Realty LLC | Lake Placid, Florida<br>"The Service You Deserve"</p>
-    <p>Ridgdill Realty, LLC – Florida Licensed Real Estate Brokerage<br>
-    M. Allen Ridgdill, Broker  | Sherida Ridgdill, Sales Associate</p>
-  </footer>
-</body>
-</html>
