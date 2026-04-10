@@ -1,160 +1,735 @@
-export default function RidgdillRealtyHomepage() {
-  return (
-    <div className="min-h-screen bg-white text-slate-900">
-      <header className="border-b border-slate-200 bg-white/95 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <div>
-            <div className="text-2xl font-bold tracking-wide">Ridgdill Realty</div>
-            <div className="text-sm text-slate-600">Building Relationships, Not Just Transactions</div>
-          </div>
-          <nav className="hidden gap-6 text-sm font-medium md:flex">
-            <a href="#home" className="hover:text-slate-600">Home</a>
-            <a href="#about" className="hover:text-slate-600">About</a>
-            <a href="#services" className="hover:text-slate-600">Services</a>
-            <a href="#communities" className="hover:text-slate-600">Communities</a>
-            <a href="#contact" className="hover:text-slate-600">Contact</a>
-          </nav>
-        </div>
-      </header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ridgdill Realty</title>
+  <meta
+    name="description"
+    content="Ridgdill Realty - Building Relationships, Not Just Transactions."
+  />
+  <style>
+    :root {
+      --burgundy: #7d1d19;
+      --burgundy-dark: #681612;
+      --silver: #a8abad;
+      --navy: #1f3b68;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --light: #f7f7f7;
+      --white: #ffffff;
+      --border: #e5e7eb;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      --max-width: 1200px;
+    }
 
-      <section id="home" className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-700" />
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-20 md:grid-cols-2 md:py-28">
-          <div className="text-white">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-slate-200">
-              Ridgdill Realty, LLC
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.98);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 12px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 220px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .brand-text {
+      display: none;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--burgundy);
+    }
+
+    nav a:hover {
+      color: var(--navy);
+    }
+
+    .hero {
+      background:
+        linear-gradient(rgba(125, 29, 25, 0.86), rgba(31, 59, 104, 0.82)),
+        url("IMG_2536.PNG") center top / contain no-repeat,
+        linear-gradient(135deg, #5a1411, #1f3b68);
+      color: var(--white);
+    }
+
+    .hero-inner {
+      min-height: 680px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 40px;
+      padding: 70px 0;
+    }
+
+    .hero-copy {
+      max-width: 620px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.15);
+      color: #f3f4f6;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 0 0 18px;
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1.05;
+      font-weight: 800;
+    }
+
+    .hero p {
+      margin: 0 0 28px;
+      font-size: clamp(17px, 2vw, 21px);
+      color: #f3f4f6;
+      max-width: 560px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.2s ease;
+      border: 2px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--white);
+      color: var(--burgundy);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-outline {
+      border-color: rgba(255, 255, 255, 0.55);
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-points span {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      font-size: 14px;
+      font-weight: 600;
+      color: #f9fafb;
+    }
+
+    .hero-card {
+      justify-self: end;
+      width: min(100%, 430px);
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 28px;
+      padding: 18px;
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card-inner {
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--text);
+      border-radius: 22px;
+      padding: 26px;
+    }
+
+    .hero-card h2 {
+      margin: 0 0 12px;
+      font-size: 32px;
+      line-height: 1.1;
+      color: var(--burgundy);
+    }
+
+    .hero-card .small-label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .hero-card p {
+      margin: 0 0 18px;
+      color: #4b5563;
+      font-size: 16px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .info-box {
+      background: #f8fafc;
+      border: 1px solid #edf2f7;
+      border-radius: 18px;
+      padding: 14px;
+    }
+
+    .info-box strong {
+      display: block;
+      font-size: 14px;
+      color: var(--burgundy);
+      margin-bottom: 4px;
+    }
+
+    .info-box span {
+      font-size: 14px;
+      color: #4b5563;
+    }
+
+    section {
+      padding: 76px 0;
+    }
+
+    .section-title {
+      margin-bottom: 16px;
+      color: var(--burgundy);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .section-heading {
+      margin: 0 0 14px;
+      font-size: clamp(28px, 3vw, 44px);
+      line-height: 1.15;
+    }
+
+    .section-text {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .portrait-wrap {
+      background: linear-gradient(135deg, #f8fafc, #eef2f7);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .portrait-wrap img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 20px;
+      background: linear-gradient(180deg, #f9fafb, #f3f4f6);
+    }
+
+    .about-copy {
+      font-size: 17px;
+      color: #374151;
+    }
+
+    .about-copy p {
+      margin-top: 0;
+      margin-bottom: 18px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .stat {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 30px;
+      color: var(--burgundy);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .services {
+      background: var(--light);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 36px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 28px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: var(--burgundy);
+      font-size: 22px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .area {
+      background: linear-gradient(180deg, #ffffff, #f9fafb);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 26px 18px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    .area strong {
+      display: block;
+      color: var(--navy);
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .area span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .contact {
+      background: linear-gradient(135deg, var(--burgundy), var(--navy));
+      color: var(--white);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .contact .section-title,
+    .contact .section-text {
+      color: #f3f4f6;
+    }
+
+    .contact-box {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 28px;
+      padding: 28px;
+      backdrop-filter: blur(8px);
+    }
+
+    .contact-box p {
+      margin: 0 0 14px;
+      font-size: 18px;
+    }
+
+    .contact-box strong {
+      color: #ffffff;
+    }
+
+    .footer {
+      background: #111827;
+      color: #d1d5db;
+      padding: 26px 0;
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-inner,
+      .about-grid,
+      .contact-grid,
+      .cards,
+      .areas-grid,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        background:
+          linear-gradient(rgba(125, 29, 25, 0.88), rgba(31, 59, 104, 0.84)),
+          linear-gradient(135deg, #5a1411, #1f3b68);
+      }
+
+      .hero-card {
+        justify-self: start;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .topbar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        gap: 14px;
+      }
+
+      .brand img {
+        width: 190px;
+      }
+
+      .hero-inner {
+        min-height: auto;
+        padding: 54px 0;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero-card h2 {
+        font-size: 28px;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        width: min(calc(100% - 24px), var(--max-width));
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#home" class="brand" aria-label="Ridgdill Realty Home">
+        <img src="Ridgdill-Realty-reverse-color-horiz.jpg" alt="Ridgdill Realty logo" />
+      </a>
+
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#areas">Communities</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <div class="eyebrow">Ridgdill Realty, LLC</div>
+          <h1>The Service You Deserve</h1>
+          <p>
+            Personal real estate service rooted in relationships, local knowledge,
+            and trusted guidance for buyers, sellers, and those relocating in
+            Central Florida.
+          </p>
+
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="#contact">Contact Us</a>
+            <a class="btn btn-outline" href="#services">View Services</a>
+          </div>
+
+          <div class="hero-points">
+            <span>Buying</span>
+            <span>Selling</span>
+            <span>Relocation</span>
+            <span>Personal Service</span>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="hero-card-inner">
+            <div class="small-label">Featured Property</div>
+            <h2>Windy Point Estate</h2>
+            <p>
+              This featured section is display only. The click-through link to the
+              featured property has been removed as requested.
             </p>
-            <h1 className="max-w-xl text-4xl font-bold leading-tight md:text-6xl">
-              Trusted Florida Real Estate Guidance With Personal Service
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg text-slate-200">
-              Whether you are buying, selling, relocating, or investing, Ridgdill Realty offers local knowledge,
-              thoughtful strategy, and personal attention every step of the way.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                href="#contact"
-                className="rounded-2xl bg-white px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg transition hover:scale-[1.02]"
-              >
-                Contact Ridgdill Realty
-              </a>
-              <a
-                href="#services"
-                className="rounded-2xl border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                View Services
-              </a>
+
+            <div class="info-grid">
+              <div class="info-box">
+                <strong>Property Type</strong>
+                <span>Luxury Waterfront Estate</span>
+              </div>
+              <div class="info-box">
+                <strong>Status</strong>
+                <span>Featured on Site</span>
+              </div>
+              <div class="info-box">
+                <strong>Presented By</strong>
+                <span>Ridgdill Realty</span>
+              </div>
+              <div class="info-box">
+                <strong>Showcased</strong>
+                <span>Information Only</span>
+              </div>
             </div>
           </div>
+        </aside>
+      </div>
+    </section>
 
-          <div className="rounded-3xl bg-white/10 p-6 shadow-2xl ring-1 ring-white/20 backdrop-blur">
-            <div className="rounded-2xl bg-white p-6 text-slate-900 shadow-xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Featured Property</p>
-              <h2 className="mt-3 text-3xl font-bold">Windy Point Estate</h2>
-              <p className="mt-4 text-base leading-7 text-slate-600">
-                A signature waterfront offering presented as a featured listing on the Ridgdill Realty website.
-                This section is display-only and does not include a click-through property link.
-              </p>
-              <div className="mt-6 grid grid-cols-2 gap-4 text-sm text-slate-700">
-                <div className="rounded-2xl bg-slate-50 p-4">
-                  <div className="font-semibold">Property Type</div>
-                  <div className="mt-1 text-slate-600">Luxury Waterfront Estate</div>
-                </div>
-                <div className="rounded-2xl bg-slate-50 p-4">
-                  <div className="font-semibold">Status</div>
-                  <div className="mt-1 text-slate-600">Featured on Site</div>
-                </div>
-              </div>
-              <p className="mt-6 text-sm text-slate-500">
-                Property details may be updated directly by Ridgdill Realty without directing visitors off-page.
-              </p>
+    <section id="about">
+      <div class="container about-grid">
+        <div class="portrait-wrap">
+          <img src="IMG_2536.PNG" alt="Allen and Sherida Ridgdill" />
+        </div>
+
+        <div class="about-copy">
+          <div class="section-title">About Ridgdill Realty</div>
+          <h2 class="section-heading">Building Relationships, Not Just Transactions</h2>
+          <p>
+            Ridgdill Realty is committed to providing thoughtful, professional real
+            estate service with a personal touch. We believe clients deserve clear
+            communication, honest guidance, and dependable follow-through.
+          </p>
+          <p>
+            Whether you are purchasing your next home, preparing to sell, or
+            exploring opportunities in Central Florida, we work to make each step
+            easier to understand and confidently navigate.
+          </p>
+          <p>
+            Our goal is simple: serve people well and handle every transaction with
+            care, integrity, and attention to detail.
+          </p>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>863</strong>
+              <span>Local Service Area</span>
+            </div>
+            <div class="stat">
+              <strong>1:1</strong>
+              <span>Personal Attention</span>
+            </div>
+            <div class="stat">
+              <strong>100%</strong>
+              <span>Relationship Focused</span>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="about" className="mx-auto max-w-7xl px-6 py-20">
-        <div className="grid gap-10 md:grid-cols-2">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">About</p>
-            <h2 className="mt-3 text-3xl font-bold md:text-4xl">Real Estate Service Rooted in Integrity</h2>
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-title">Services</div>
+        <h2 class="section-heading">How We Help</h2>
+        <p class="section-text">
+          Ridgdill Realty offers professional support tailored to your real estate
+          goals with service that is practical, responsive, and personal.
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <h3>For Buyers</h3>
+            <p>
+              Guidance through the search process, showings, offers, inspections,
+              negotiations, and closing.
+            </p>
           </div>
-          <div className="text-base leading-8 text-slate-600">
-            Ridgdill Realty is committed to providing professional service with a personal touch. From first-time
-            buyers to sellers of unique and luxury properties, our goal is to make every transaction clear,
-            well-managed, and relationship-driven.
+
+          <div class="card">
+            <h3>For Sellers</h3>
+            <p>
+              Strategic pricing support, listing preparation, marketing guidance,
+              and transaction oversight from start to finish.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Relocation & Investment</h3>
+            <p>
+              Insight for those moving into the area, purchasing second homes, or
+              evaluating local real estate opportunities.
+            </p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="services" className="bg-slate-50 py-20">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Services</p>
-            <h2 className="mt-3 text-3xl font-bold md:text-4xl">How We Help</h2>
+    <section id="areas">
+      <div class="container">
+        <div class="section-title">Communities</div>
+        <h2 class="section-heading">Serving Central Florida Communities</h2>
+        <p class="section-text">
+          We serve clients across Lake Placid, Sebring, Avon Park, and surrounding
+          areas with local knowledge and personal care.
+        </p>
+
+        <div class="areas-grid">
+          <div class="area">
+            <strong>Lake Placid</strong>
+            <span>Homes, waterfront, and local neighborhoods</span>
           </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {[
-              {
-                title: 'Buyers',
-                text: 'Guidance through home search, market analysis, negotiations, inspections, and closing.',
-              },
-              {
-                title: 'Sellers',
-                text: 'Strategic pricing, marketing support, listing preparation, and transaction oversight.',
-              },
-              {
-                title: 'Investors & Relocation',
-                text: 'Local insight for second homes, investment opportunities, and area transitions.',
-              },
-            ].map((item) => (
-              <div key={item.title} className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-                <h3 className="text-xl font-semibold">{item.title}</h3>
-                <p className="mt-3 leading-7 text-slate-600">{item.text}</p>
-              </div>
-            ))}
+          <div class="area">
+            <strong>Sebring</strong>
+            <span>Residential, investment, and lifestyle moves</span>
+          </div>
+          <div class="area">
+            <strong>Avon Park</strong>
+            <span>Community-focused buying and selling support</span>
+          </div>
+          <div class="area">
+            <strong>Surrounding Areas</strong>
+            <span>Guidance throughout the region</span>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="communities" className="mx-auto max-w-7xl px-6 py-20">
-        <div className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Communities</p>
-          <h2 className="mt-3 text-3xl font-bold md:text-4xl">Serving Central Florida Communities</h2>
-          <p className="mt-4 text-base leading-8 text-slate-600">
-            Ridgdill Realty serves buyers and sellers with attention to the unique character of each local market.
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <div class="section-title">Contact</div>
+          <h2 class="section-heading">Let’s Talk About Your Next Move</h2>
+          <p class="section-text">
+            Reach out to Ridgdill Realty for help with buying, selling, relocating,
+            or learning more about properties in the area.
           </p>
         </div>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {['Lake Placid', 'Sebring', 'Avon Park', 'Surrounding Areas'].map((area) => (
-            <div key={area} className="rounded-3xl border border-slate-200 bg-white p-6 text-center text-lg font-semibold shadow-sm">
-              {area}
-            </div>
-          ))}
-        </div>
-      </section>
 
-      <section id="contact" className="bg-slate-900 py-20 text-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 md:grid-cols-2">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-300">Contact</p>
-            <h2 className="mt-3 text-3xl font-bold md:text-4xl">Let’s Talk About Your Next Move</h2>
-            <p className="mt-4 max-w-xl text-base leading-8 text-slate-300">
-              Reach out to Ridgdill Realty for questions about buying, selling, featured listings, or local market
-              guidance.
-            </p>
-          </div>
-          <div className="rounded-3xl bg-white/10 p-8 ring-1 ring-white/15 backdrop-blur">
-            <div className="space-y-4 text-base text-slate-200">
-              <p><span className="font-semibold text-white">Brokerage:</span> Ridgdill Realty, LLC</p>
-              <p><span className="font-semibold text-white">Phone:</span> (863) 000-0000</p>
-              <p><span className="font-semibold text-white">Email:</span> info@ridgdillrealty.com</p>
-              <p><span className="font-semibold text-white">Website:</span> www.ridgdillrealty.com</p>
-            </div>
-          </div>
+        <div class="contact-box">
+          <p><strong>Ridgdill Realty, LLC</strong></p>
+          <p><strong>Phone:</strong> 863-464-0928</p>
+          <p><strong>Website:</strong> www.ridgdillrealty.com</p>
+          <p><strong>Service Area:</strong> Central Florida</p>
         </div>
-      </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© 2026 Ridgdill Realty. All rights reserved.</div>
+      <div>Building Relationships, Not Just Transactions</div>
     </div>
-  );
-}
-
+  </footer>
+</body>
+</html>
