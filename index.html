@@ -8,7 +8,6 @@
   <style>
     :root {
       --burgundy: #7d1d19;
-      --burgundy-dark: #681612;
       --navy: #1f3b68;
       --text: #1f2937;
       --muted: #6b7280;
@@ -61,21 +60,9 @@
     .topbar-inner {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-end;
       gap: 20px;
       padding: 14px 0;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      flex-shrink: 0;
-    }
-
-    .brand img {
-      width: 250px;
-      max-width: 100%;
-      height: auto;
     }
 
     nav {
@@ -99,18 +86,33 @@
     }
 
     .hero-inner {
-      min-height: 620px;
+      min-height: 680px;
       display: flex;
       align-items: center;
-      padding: 90px 0;
+      padding: 70px 0 90px;
     }
 
     .hero-copy {
-      max-width: 700px;
-      background: rgba(0, 0, 0, 0.18);
+      max-width: 760px;
+      background: rgba(0, 0, 0, 0.22);
       padding: 34px;
       border-radius: 24px;
       backdrop-filter: blur(4px);
+    }
+
+    .hero-logo-wrap {
+      display: inline-block;
+      background: rgba(12, 18, 28, 0.72);
+      padding: 16px 20px;
+      border-radius: 18px;
+      margin-bottom: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-logo {
+      width: 320px;
+      max-width: 100%;
+      height: auto;
     }
 
     .eyebrow {
@@ -397,16 +399,15 @@
 
     @media (max-width: 720px) {
       .topbar-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .brand img {
-        width: 210px;
+        justify-content: center;
       }
 
       .hero-copy {
         padding: 24px;
+      }
+
+      .hero-logo {
+        width: 240px;
       }
 
       .container {
@@ -415,6 +416,7 @@
 
       nav {
         gap: 14px;
+        justify-content: center;
       }
     }
   </style>
@@ -422,10 +424,6 @@
 <body>
   <header class="topbar">
     <div class="container topbar-inner">
-      <a href="#home" class="brand" aria-label="Ridgdill Realty Home">
-        <img src="Ridgdill-Realty-reverse-color-horiz.jpg" alt="Ridgdill Realty logo" />
-      </a>
-
       <nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -440,6 +438,14 @@
     <section class="hero" id="home">
       <div class="container hero-inner">
         <div class="hero-copy">
+          <div class="hero-logo-wrap">
+            <img
+              class="hero-logo"
+              src="Ridgdill-Realty-reverse-color-horiz.jpg"
+              alt="Ridgdill Realty logo"
+            />
+          </div>
+
           <div class="eyebrow">Ridgdill Realty, LLC</div>
           <h1>The Service You Deserve</h1>
           <p>
@@ -585,6 +591,7 @@
 
         <div class="contact-box">
           <p><strong>Ridgdill Realty, LLC</strong></p>
+          <p><strong>M. Allen Ridgdill, Broker</strong></p>
           <p><strong>Phone:</strong> 863-464-0928</p>
           <p><strong>Website:</strong> www.ridgdillrealty.com</p>
           <p><strong>Service Area:</strong> Central Florida</p>
